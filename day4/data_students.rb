@@ -19,5 +19,5 @@ end
 puts reader.total_debt_in_data
 p h2
 CSV.foreach('student_data.csv', headers: true) do |row|
-  puts h2[row["name"]]
+  puts h2[row["Name"]]
 end
