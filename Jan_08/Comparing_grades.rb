@@ -9,24 +9,6 @@ class Grade
 		@letter=letter
 	end
 
-	def letter=(value)
-		unless POINTS.include?(value)
-		raise "#{value} is not grade letter"
-	end
-		@letter=value
-	end
-
-
-	def <=>(other)
-		if other.letter<letter
-			return -1
-		elsif other.letter>letter
-			return 1
-		else
-			return 0
-		end
-	end
-end
 
 
 a_grade = Grade.new("A")
