@@ -11,12 +11,14 @@ class Grade
 	end
 
 	def letter=(value)
+
     unless VALID_LETTERS.include?(value)
-      raise "#{value} is not a valid grade letter"
+   	raise "#{value} is not a valid grade letter"
+
     end
 
     @letter = value
-  end
+    end
 
   	def <=>(other)
   		other.letter <=> self.letter
