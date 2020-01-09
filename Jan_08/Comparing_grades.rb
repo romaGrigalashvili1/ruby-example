@@ -1,23 +1,26 @@
 class Grade
 	include Comparable
+	VALID_LETTERS =  ["A", "B", "C", "D", "F"]
 
-	attr_accessor :letter
-	
-	@@letters = {
-		'A' => 5,
-		'B' => 4,
-		'C' => 3,
-		'D' => 2,
-		'F' => 1
-	}
+	attr_reader :letter
 
 	def initialize(letter)
+
 		@letter=letter
+
 	end
 
-	def <=>(other)
-		@@letters[self.letter] <=> @@letters[other.letter]
-	end
+	def letter=(value)
+    unless VALID_LETTERS.include?(value)
+      raise "#{value} is not a valid grade letter"
+    end
+
+    @letter = value
+  end
+
+  	def <=>(other)
+  		other.letter <=> self.letter
+  	end
 end
 a_grade = Grade.new("A")
 b_grade = Grade.new("B")
