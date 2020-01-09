@@ -1,16 +1,24 @@
 class Grade
 	include Comparable
 
-	POINTS=["A","B","C","D","F"]
-
-	attr_reader :letter
+	attr_accessor :letter
+	
+	@@letters = {
+		'A' => 5,
+		'B' => 4,
+		'C' => 3,
+		'D' => 2,
+		'F' => 1
+	}
 
 	def initialize(letter)
 		@letter=letter
 	end
 
-
-
+	def <=>(other)
+		@@letters[self.letter] <=> @@letters[other.letter]
+	end
+end
 a_grade = Grade.new("A")
 b_grade = Grade.new("B")
 c_grade = Grade.new("C")
