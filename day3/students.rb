@@ -1,5 +1,5 @@
 require 'csv'
-require_relative 'students_data'
+require_relative 'data_students'
 
 class Csvreader
   attr_accessor :students
